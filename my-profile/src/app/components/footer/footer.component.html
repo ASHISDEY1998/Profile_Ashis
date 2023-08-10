@@ -1,0 +1,35 @@
+<footer>
+    <div class="footer-wrap">
+        <div class="footer-content">
+            <h3 class="footer-title mb-4"> Let's Talk</h3>
+            <div class="footer-contact mb-4">
+                <p class=" mb-3" (click)="copyToClipboard(emailContent)" data-toggle="tooltip" data-placement="right"
+                    title="click to copy">
+                    <i class="bi bi-envelope-at mx-3"></i> {{emailContent}}
+                </p>
+                <p class=" mb-3" (click)="copyToClipboard(phoneContent)" data-toggle="tooltip" data-placement="right"
+                    title="click to copy">
+                    <i class="bi bi-phone  mx-3"></i> {{phoneContent}}
+                </p>
+                <p class=" mb-3" (click)="copyToClipboard(whatsupContent)" data-toggle="tooltip" data-placement="right"
+                    title="click to copy">
+                    <i class="bi bi-whatsapp  mx-3"></i> {{whatsupContent}}
+                </p>
+            </div>
+            <div class="footer-icon-bar mb-4">
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="google"><i class="bi bi-google"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
+            </div>
+            <p class="outrow-desc">
+                Bringing creative visions to life through Angular, HTML, CSS, JavaScript, and TypeScript. Elevating user
+                experiences with 3+ years of frontend mastery.
+            </p>
+        </div>
+    </div>
+    <div #notificationPopper class="notification-popper" [style.display]="notificationVisible ? 'block' : 'none'">
+        {{ notificationMessage }}
+    </div>
+</footer>

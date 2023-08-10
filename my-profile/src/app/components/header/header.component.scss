@@ -1,0 +1,35 @@
+header {
+    background-color: rgb(217, 234, 245);
+    .navbar {
+        max-width: 1366px;
+        width: 100%;
+        margin: auto;
+
+        .navbar-brand {
+            font-size: 42px;
+            font-weight: 700;
+            color: #0b3b6b;
+        }
+
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-link {
+                    font-size: 22px;
+                    font-weight: 500;
+                    color: #0b3b6b;
+                    padding: 8px 16px;
+                    margin: 0px 8px;
+
+                    &:hover,
+                    &.active {
+                        background-color: #0b3b6b;
+                        color: #fff;
+                        border-radius: 25px;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
