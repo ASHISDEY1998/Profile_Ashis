@@ -24,20 +24,24 @@
             font-size: 20px;
         }
 
+        .linkedin:hover {
+            color: #007bb5;
+        }
+
+        .github:hover {
+            color: #000000;
+        }
+
         .twitter:hover {
             color: #55ACEE;
         }
 
-        .google:hover {
-            background: #dd4b39;
+        .email:hover {
+            color: #dd4b39;
         }
 
-        .linkedin:hover {
-            background: #007bb5;
-        }
-
-        .youtube:hover {
-            background: #bb0000;
+        .phone:hover {
+            color: #049b04;
         }
     }
 
