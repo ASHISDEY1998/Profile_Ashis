@@ -1,0 +1,13 @@
+.knowledge-range-bar {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(217, 234, 245);
+    border-radius: 10px;
+    overflow: hidden;
+
+    .knowledge-range {
+        height: 100%;
+        background-color: #0b3b6b;
+        border-radius: 10px;
+    }
+}
