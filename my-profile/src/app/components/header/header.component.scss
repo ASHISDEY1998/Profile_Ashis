@@ -1,5 +1,6 @@
 header {
     background-color: rgb(217, 234, 245);
+
     .navbar {
         max-width: 1366px;
         width: 100%;
@@ -19,6 +20,7 @@ header {
                     color: #0b3b6b;
                     padding: 8px 16px;
                     margin: 0px 8px;
+                    width: fit-content;
 
                     &:hover,
                     &.active {
