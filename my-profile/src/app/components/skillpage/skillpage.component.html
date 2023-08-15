@@ -1,0 +1,27 @@
+<div class="container-fluid skills-page">
+    <div class="row heading-row">
+        <div class="col-md-12">
+            <h2 class="title">Skills masted by Ashis</h2>
+        </div>
+    </div>
+    <div class="row content-row">
+        <div class="col-md-12 content-block">
+            <div class="skill-graph" *ngIf="!loading">
+                <div class="skills-desctiption" *ngFor="let skill of skills">
+                    <app-knowledge-range-bar [skillName]="skill.name" [knowledgeLevel]="skill.level"
+                        [skillDescription]="skill.description"></app-knowledge-range-bar>
+
+                </div>
+            </div>
+            <div class="loader" *ngIf="loading">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

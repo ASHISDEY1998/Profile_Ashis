@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-career',
@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./career.component.scss']
 })
 export class CareerComponent implements OnInit {
-
+  @Input() jobName: string = '';
+  @Input() companyLogo: string = '';
+  @Input() companyTenure: string = '';
+  @Input() companyDesc: string = '';
   constructor() { }
 
   ngOnInit(): void {

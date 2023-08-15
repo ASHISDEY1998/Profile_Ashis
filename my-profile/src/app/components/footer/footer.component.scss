@@ -1,7 +1,9 @@
+@import "../../../variable.scss";
+
 .footer-wrap {
     width: 100%;
     margin: auto;
-    background-color: #0b3b6b;
+    background-color: $color-primery;
     color: white;
     display: flex;
     align-items: center;
@@ -81,7 +83,7 @@
     position: fixed;
     top: 5%;
     right: 3%;
-    background-color: rgb(217, 234, 245);
+    background-color: $color-background;
     color: #0b3b6b;
     padding: 14px 12px;
     border-radius: 4px;

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "HTML",
+        "level": 90,
+        "description": "with 4 years of experience in developing website skeleton"
+    },
+    {
+        "name": "CSS & Scss",
+        "level": 85,
+        "description": "Mastery of CSS and SCSS for 4 years, sculpting captivating and responsive web designs with advanced techniques and seamless user interactions."
+    },
+    {
+        "name": "Bootstrap",
+        "level": 90,
+        "description": "Four years of harnessing Bootstrap's power, crafting polished and responsive web interfaces that seamlessly blend design and functionality through expert utilization of its features."
+    },
+    {
+        "name": "JavaScript",
+        "level": 70,
+        "description": "Four years of JavaScript mastery, sculpting dynamic and interactive web experiences through advanced coding techniques and seamless functionality."
+    },
+    {
+        "name": "Angular",
+        "level": 68,
+        "description": "Three years of Angular expertise, designing and developing robust web applications with seamless user experiences and dynamic functionality, leveraging the framework's full potential."
+    },
+    {
+        "name": "Angular JS",
+        "level": 75,
+        "description": "Two years of AngularJS mastery, creating dynamic and interactive web applications with seamless user interfaces and efficient data handling, harnessing the framework's capabilities to deliver exceptional user experiences."
+    },
+    {
+        "name": "Git",
+        "level": 95,
+        "description": "Four years of Git proficiency, orchestrating seamless version control and collaborative development through expert utilization of branching, merging, and repository management, ensuring efficient and organized codebase evolution."
+    }
+]
