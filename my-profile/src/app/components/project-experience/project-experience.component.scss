@@ -1,0 +1,9 @@
+.slick-section {
+    margin-top: 48px;
+    margin-bottom: 48px;
+
+    @media (max-width:991px) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}

@@ -5,20 +5,7 @@
         </div>
     </div>
     <div class="row content-row">
-        <div class="col-md-6 d-flex align-item-center">
-            <picture>
-                <!-- Image for Desktop -->
-                <source media="(min-width: 768px)" srcset="../../../assets/Images/Hero_banner.png">
-
-                <!-- Image for Mobile -->
-                <source media="(max-width: 767px)" srcset="../../../assets/Images/Hero_banner.png">
-
-                <!-- Default Image (if none of the sources match) -->
-                <img class="img-fluid" src="../../../assets/Images/Hero_banner.png" alt="Responsive Image">
-            </picture>
-
-        </div>
-        <div class="col-md-6 content-block">
+        <div class="col-md-12 content-block">
             <div class="skill-graph" *ngIf="!loading">
                 <div class="skills-desctiption" *ngFor="let skill of skills">
                     <app-knowledge-range-bar [skillName]="skill.name" [knowledgeLevel]="skill.level"

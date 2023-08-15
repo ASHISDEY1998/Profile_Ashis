@@ -1,4 +1,17 @@
+@import "../../../variable.scss";
+
 .skills-page {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    padding-top: 0px;
+    margin-bottom: 48px;
+
+    @media(max-width:991px) {
+        padding-top: 32px;
+        margin-bottom: 32px;
+    }
+
     .heading-row {
         .title {
             text-align: center;
@@ -6,7 +19,7 @@
             font-size: 48px;
             line-height: 40px;
             margin-bottom: 8px;
-            color: #0b3b6b;
+            color: $color-primery;
             margin-top: 48px;
 
             @media(max-width:991px) {
@@ -19,15 +32,17 @@
     }
 
     .content-row {
+        margin-top: 48px;
+
+        @media(max-width:991px) {
+            margin-top: 32px;
+        }
+
         .content-block {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-
-            .skill-graph {
-                .skills-desctiption {}
-            }
 
             .loader {
                 .lds-ring {
@@ -43,10 +58,10 @@
                         width: 64px;
                         height: 64px;
                         margin: 8px;
-                        border: 8px solid #0b3b6b;
+                        border: 8px solid $color-primery;
                         border-radius: 50%;
                         animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-                        border-color: #0b3b6b transparent transparent transparent;
+                        border-color: $color-primery transparent transparent transparent;
                     }
                 }
 
@@ -72,8 +87,6 @@
                     }
                 }
             }
-
-
         }
     }
 

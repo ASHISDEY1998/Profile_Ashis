@@ -1,3 +1,5 @@
+@import "../../../variable.scss";
+
 .hero-banner {
     max-width: 1440px;
     width: 100%;
@@ -35,7 +37,7 @@
                 font-size: 48px;
                 line-height: 40px;
                 margin-bottom: 8px;
-                color: #0b3b6b;
+                color: $color-primery;
 
                 @media(max-width:991px) {
                     font-size: 44px;
@@ -68,9 +70,9 @@
             .download-button {
                 font-size: 22px;
                 font-weight: 600;
-                color: #0b3b6b;
+                color: $color-primery;
                 border-radius: 8px;
-                border: 3px solid #0b3b6b;
+                border: 3px solid $color-primery;
 
                 @media(max-width:991px) {
                     font-size: 18px;
@@ -88,7 +90,7 @@
                 &:hover,
                 &:focus,
                 &.active {
-                    background-color: #0b3b6b;
+                    background-color: $color-primery;
                     color: #fff;
                     box-shadow: none;
                 }

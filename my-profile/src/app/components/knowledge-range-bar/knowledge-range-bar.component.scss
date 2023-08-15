@@ -1,13 +1,49 @@
-.knowledge-range-bar {
-    width: 100%;
-    height: 20px;
-    background-color: rgb(217, 234, 245);
-    border-radius: 10px;
-    overflow: hidden;
+@import "../../../variable.scss";
 
-    .knowledge-range {
-        height: 100%;
-        background-color: #0b3b6b;
+.slill-section-comp {
+    margin-bottom: 24px;
+
+    @media(max-width:991px) {
+        margin-bottom: 20px;
+    }
+
+    .skillname {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        color: $color-primery;
+
+        @media(max-width:991px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .knowledge-range-bar {
+        width: 100%;
+        height: 20px;
+        background-color: $color-background;
         border-radius: 10px;
+        overflow: hidden;
+
+        .knowledge-range {
+            height: 100%;
+            background-color: $color-primery;
+            border-radius: 10px;
+
+        }
+    }
+
+    .skill-desc {
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 600;
+        margin-top: 12px;
+
+        @media(max-width:991px) {
+            font-size: 18px;
+            line-height: 28px;
+        }
     }
 }

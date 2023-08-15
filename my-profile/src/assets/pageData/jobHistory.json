@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Cognizant technology solutions",
+        "imagePath": "../../../assets/Images/ctsLogo.png",
+        "timeline": "July-2021 to Today",
+        "description": "Frontend Developer at Cognizant Technology Solutions, crafting captivating user experiences and leveraging modern technologies from July 2021."
+    },
+    {
+        "name": "Tapplent Technologies Pvt. Ltd.",
+        "imagePath": "../../../assets/Images/tapplentLogo.png",
+        "timeline": "Jan-2021 to July-2021",
+        "description": "Frontend Developer at Tapplent Technology Solutions, contributing to captivating user experiences and employing modern technologies from January 2021 to July 2021. Created varios dashboard for a HRMS software"
+    },
+    {
+        "name": "Flynava Technologies",
+        "imagePath": "../../../assets/Images/flynavaLogo.jpg",
+        "timeline": "Dec-2019 to Dec-2020",
+        "description": "At Flynava Technologies, skillfully developed engaging dashboards and interactive forms for airline pricing software, as a dedicated Frontend Developer from December 2019 to December 2020."
+    }
+]

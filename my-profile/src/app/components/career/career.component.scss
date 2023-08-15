@@ -1,0 +1,48 @@
+@import "../../../variable.scss";
+
+.carrier-comp {
+    .media {
+        padding: 16px;
+        margin-bottom: 14px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        border-radius: 8px;
+        align-items: center;
+
+        .logo-img {
+            height: 64px;
+            width: 64px;
+        }
+
+        .media-body {
+            h5 {
+                font-size: 28px;
+                font-weight: 600;
+                color: $color-primery;
+
+                @media (max-width:991px) {
+                    font-size: 24px;
+                }
+            }
+
+            div {
+                font-size: 22px;
+                font-weight: 600;
+                color: gray;
+
+                @media (max-width:991px) {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 22px;
+                margin-bottom: 0px;
+
+                @media (max-width:991px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

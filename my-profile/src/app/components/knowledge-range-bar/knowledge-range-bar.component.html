@@ -1,7 +1,8 @@
 <div class="slill-section-comp">
     <div class="skillname">{{skillName}}</div>
     <div class="knowledge-range-bar">
-        <div class="knowledge-range" [style.width.%]="knowledgeLevel"></div>
+        <div class="knowledge-range" role="progressbar" [attr.aria-valuenow]="knowledgeLevel" aria-valuemin="0"
+            aria-valuemax="100" [style.width.%]="knowledgeLevel"></div>
     </div>
-    <p>{{skillDescription}}</p>
+    <p class="skill-desc">{{skillDescription}}</p>
 </div>
