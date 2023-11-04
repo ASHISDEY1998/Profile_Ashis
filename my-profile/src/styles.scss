@@ -12,3 +12,34 @@ body {
 .no-padd {
     padding: 0;
 }
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    height: inherit !important;
+
+    .card {
+        height: 100%;
+    }
+}
+
+.slick-next {
+    right: -50px;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: "slick";
+    font-size: 40px;
+    line-height: 1;
+    color: $color-primery;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

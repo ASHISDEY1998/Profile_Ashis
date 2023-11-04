@@ -1,3 +1,5 @@
+@import "../../../variable.scss";
+
 .slick-section {
     margin-top: 48px;
     margin-bottom: 48px;
@@ -5,5 +7,32 @@
     @media (max-width:991px) {
         margin-top: 32px;
         margin-bottom: 32px;
+    }
+
+    .card {
+        .card-title {
+            font-size: 28px;
+            line-height: 30px;
+            margin-bottom: 14px;
+            font-weight: 700;
+            color: $color-primery;
+
+            @media (max-width:991px) {
+                font-size: 24px;
+                line-height: 26px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .card-text {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 400;
+
+            @media (max-width:991px) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
     }
 }

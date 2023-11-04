@@ -3,7 +3,7 @@
         (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)"
         *ngIf="!projloading">
         <div ngxSlickItem *ngFor="let proj of projectList" class="slide">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-3">
                 <img src="{{ proj.imagePath }}" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ proj.name }}</h5>
