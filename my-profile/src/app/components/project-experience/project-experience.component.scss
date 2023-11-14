@@ -10,29 +10,34 @@
     }
 
     .card {
-        .card-title {
-            font-size: 28px;
-            line-height: 30px;
-            margin-bottom: 14px;
-            font-weight: 700;
-            color: $color-primery;
+        .card-body {
+            padding: 12px;
 
-            @media (max-width:991px) {
-                font-size: 24px;
-                line-height: 26px;
-                margin-bottom: 12px;
+            .card-title {
+                font-size: $sub-heading-font-desktop;
+                line-height: 22px;
+                margin-bottom: 14px;
+                font-weight: 700;
+                color: $color-primery;
+
+                @media (max-width:991px) {
+                    font-size: $sub-heading-font-mobile;
+                    line-height: 20px;
+                    margin-bottom: 12px;
+                }
+            }
+
+            .card-text {
+                font-size: $paragraph-font-desktop;
+                line-height: 18px;
+                font-weight: 400;
+
+                @media (max-width:991px) {
+                    font-size: $paragraph-font-mobile;
+                    line-height: 16px;
+                }
             }
         }
 
-        .card-text {
-            font-size: 18px;
-            line-height: 24px;
-            font-weight: 400;
-
-            @media (max-width:991px) {
-                font-size: 16px;
-                line-height: 24px;
-            }
-        }
     }
 }

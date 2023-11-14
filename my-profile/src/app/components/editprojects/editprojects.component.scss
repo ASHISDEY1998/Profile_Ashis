@@ -1,0 +1,65 @@
+@import "../../../variable.scss";
+
+.add-Exp {
+    .form {
+
+        input.ng-invalid.ng-touched,
+        textarea.ng-invalid.ng-touched {
+            border: red 2px solid;
+        }
+
+        small {
+            color: red;
+            font-weight: 500px;
+        }
+
+        .upload-img-section {
+            @media (min-width:991px) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .image-preview {
+            height: 150px;
+            width: 300px;
+        }
+
+        .save-button {
+            float: right;
+            background-color: $color-primery;
+            color: #fff;
+            border-radius: 25px;
+            font-size: 22px;
+            font-weight: 500;
+            padding: 8px 22px;
+            margin: 0px 8px;
+            width: fit-content;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+    }
+
+}
+
+.display-exp {
+    tbody {
+        .data-image-preview {
+            height: 50px;
+            width: 100px;
+            margin-left: 50%;
+            margin-top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .delete-record {
+            margin-left: 50%;
+            margin-top: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+    }
+}

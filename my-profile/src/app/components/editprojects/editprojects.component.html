@@ -1,0 +1,100 @@
+<div class="my-3">
+    <div class="add-Exp">
+        <h3>Add Project</h3>
+        <form class="form" (ngSubmit)="onProjSubmit()" #projForm="ngForm">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="projName">Project Name *</label>
+                    <input type="text" ngModel class="form-control" id="projName" placeholder="Add Project Name"
+                        name="projname" required #projname="ngModel">
+                    <div *ngIf="projname.invalid && projname.touched">
+                        <small>*Project Name is a required field</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="projDescription">Proj Description</label>
+                <textarea class="form-control" ngModel id="projDescription" name="projdesc" required
+                    #projdesc="ngModel"></textarea>
+                <div *ngIf="projdesc.invalid && projdesc.touched">
+                    <small>*Project Description is a required field</small>
+                </div>
+
+            </div>
+            <div class="form-group upload-img-section">
+                <div class="form-check mr-5" *ngIf="editMode">
+                    <input class="form-check-input" type="checkbox" value="" id="changeProjImgCheck" ngModel
+                        name="changeProjImg" #updateProjImg>
+                    <label class="form-check-label" for="changeProjImgCheck">
+                        Change Project Image
+                    </label>
+                </div>
+                <div class="mr-5 d-flex" *ngIf="!editMode || projform.value.changeProjImg">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text" id="projImage">Project Image *</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="imageUploadProj" aria-describedby="projImage"
+                            (change)="onFileChange($event)" name="projimage" ngModel accept="image/*" #projimg="ngModel"
+                            required />
+                        <label class="custom-file-label" for="imageUploadProj">{{fileName}}</label>
+                    </div>
+                </div>
+
+                <div>
+                    <app-loader *ngIf="uploadingImage"></app-loader>
+
+                    <div *ngIf="imageUrl && !uploadingImage">
+                        <p>Image Preview:</p>
+                        <img [src]="imageUrl" alt="Project Image" class="image-preview" />
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary save-button" [disabled]="!projForm.valid">{{editMode?"Update
+                Project":"Add Project"}}</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="display-exp">
+        <h3>Saved Projects</h3>
+        <div style="overflow: auto;">
+            <table class="table table-striped table-bordered" *ngIf="!loading">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Index</th>
+                        <th scope="col" class="text-center">Project Name</th>
+                        <th scope="col" class="text-center">Description</th>
+                        <th scope="col" class="text-center">Project image</th>
+                        <th scope="col" class="text-center">Edit</th>
+                        <th scope="col" class="text-center">Delete</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="editProjs.length < 1 && !loading">
+                        <td colspan="6" class="text-center">No Project History Availabale! </td>
+                    </tr>
+                    <tr *ngFor="let proj of editProjs;index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{proj.projectName}}</td>
+                        <td>{{proj.description}}</td>
+                        <td><img [src]="proj.projImgUrl" alt="Company logo" class="data-image-preview" /></td>
+                        <td><button class="text-center border-none delete-record" (click)="onEditProjs(proj.id)"><i
+                                    class="bi bi-pencil-square"></i></button></td>
+                        <td><button class="text-center border-none delete-record" (click)="onDeleteProjs(proj.id)"><i
+                                    class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <app-loader *ngIf="loading"></app-loader>
+        </div>
+
+    </div>
+
+</div>

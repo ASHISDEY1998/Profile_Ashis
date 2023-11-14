@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { GlobalServiceService } from 'src/app/services/global-service.service';
 
 @Component({
@@ -25,14 +26,6 @@ export class ProjectExperienceComponent implements OnInit {
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
-      {
-        breakpoint: 1367,
-        settings: {
-          prevArrow: null,
-          nextArrow: null,
-          dots: true
-        }
-      },
       {
         breakpoint: 1024,
         settings: {
@@ -70,31 +63,37 @@ export class ProjectExperienceComponent implements OnInit {
   };
 
 
-  slickInit(e) {
-    console.log('slick initialized');
-  }
+  // slickInit(e) {
+  //   console.log('slick initialized');
+  // }
 
-  breakpoint(e) {
-    console.log('breakpoint');
-  }
+  // breakpoint(e) {
+  //   console.log('breakpoint');
+  // }
 
-  afterChange(e) {
-    console.log('afterChange');
-  }
+  // afterChange(e) {
+  //   console.log('afterChange');
+  // }
 
-  beforeChange(e) {
-    console.log('beforeChange');
-  }
+  // beforeChange(e) {
+  //   console.log('beforeChange');
+  // }
 
   fetchSkills(): void {
-    this.globalServiceService.getProjListUrl().subscribe(projs => {
-      this.projectList = [...projs];
-      this.projloading = false;
-    });
+    this.globalServiceService.getProjects()
+      .pipe(map(res => {
+        const exps = []
+        for (const key in res) {
+          if (res.hasOwnProperty(key)) {
+            exps.push({ ...res[key], id: key })
+          }
+        }
+        return exps
+      }))
+      .subscribe(exps => {
+        this.projectList = [...exps];
+        this.projloading = false;
+      });
   }
-
-
-
-
 
 }

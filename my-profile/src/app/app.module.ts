@@ -15,6 +15,17 @@ import { KnowledgeRangeBarComponent } from './components/knowledge-range-bar/kno
 import { SkillpageComponent } from './components/skillpage/skillpage.component';
 import { CareerProjPageComponent } from './components/career-proj-page/career-proj-page.component';
 import { ProjectExperienceComponent } from './components/project-experience/project-experience.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { EditWebsiteComponent } from './components/edit-website/edit-website.component';
+import { EditskillsComponent } from './components/editskills/editskills.component';
+import { EditexpComponent } from './components/editexp/editexp.component';
+
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireStorageModule } from "@angular/fire/compat/storage";
+import { environment } from 'src/environments/environment';
+import { LoaderComponent } from './components/loader/loader.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { EditprojectsComponent } from './components/editprojects/editprojects.component';
 
 
 
@@ -28,14 +39,23 @@ import { ProjectExperienceComponent } from './components/project-experience/proj
     KnowledgeRangeBarComponent,
     SkillpageComponent,
     CareerProjPageComponent,
-    ProjectExperienceComponent
+    ProjectExperienceComponent,
+    AdminPageComponent,
+    EditWebsiteComponent,
+    EditskillsComponent,
+    EditexpComponent,
+    LoaderComponent,
+    EditprofileComponent,
+    EditprojectsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CareerComponent implements OnInit {
   @Input() jobName: string = '';
   @Input() companyLogo: string = '';
-  @Input() companyTenure: string = '';
+  @Input() tenureStart;
+  @Input() tenureEnd ;
   @Input() companyDesc: string = '';
   constructor() { }
 

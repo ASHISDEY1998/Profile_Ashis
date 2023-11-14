@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
 @import "./variable.scss";
 
 body {
     background-color: white;
     color: $color-secondary;
-    font-family: 'Nunito', sans-serif;
+    font-family: $font-family;
 }
 
 .no-padd {
@@ -36,7 +36,7 @@ body {
 .slick-prev:before,
 .slick-next:before {
     font-family: "slick";
-    font-size: 40px;
+    font-size: $large-heading-font-desktop;
     line-height: 1;
     color: $color-primery;
     opacity: 1;

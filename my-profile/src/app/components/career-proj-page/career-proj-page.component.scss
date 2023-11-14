@@ -1,7 +1,7 @@
 @import "../../../variable.scss";
 
 .career-page {
-    max-width: 1440px;
+    max-width: 1080px;
     width: 100%;
     margin: auto;
     padding-top: 0px;
@@ -15,6 +15,7 @@
 
         @media(max-width:991px) {
             margin: 32px 0px;
+            flex-direction: column-reverse;
         }
     }
 
@@ -22,14 +23,13 @@
         .title {
             text-align: center;
             font-weight: 700;
-            font-size: 48px;
-            line-height: 40px;
-            margin-bottom: 8px;
+            font-size: $heading-font-desktop;
+            line-height: 24px;
             color: $color-primery;
             margin-top: 48px;
 
             @media(max-width:991px) {
-                font-size: 38px;
+                font-size: $heading-font-mobile;
                 line-height: 38px;
                 margin-top: 32px;
                 text-align: left;
@@ -50,51 +50,9 @@
             @media(min-width:991px) {
                 max-width: 90%;
             }
+
         }
 
-        .loader {
-            .lds-ring {
-                display: inline-block;
-                position: relative;
-                width: 80px;
-                height: 80px;
-
-                div {
-                    box-sizing: border-box;
-                    display: block;
-                    position: absolute;
-                    width: 64px;
-                    height: 64px;
-                    margin: 8px;
-                    border: 8px solid $color-primery;
-                    border-radius: 50%;
-                    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-                    border-color: $color-primery transparent transparent transparent;
-                }
-            }
-
-            .lds-ring div:nth-child(1) {
-                animation-delay: -0.45s;
-            }
-
-            .lds-ring div:nth-child(2) {
-                animation-delay: -0.3s;
-            }
-
-            .lds-ring div:nth-child(3) {
-                animation-delay: -0.15s;
-            }
-
-            @keyframes lds-ring {
-                0% {
-                    transform: rotate(0deg);
-                }
-
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-        }
     }
 
     .image-section {

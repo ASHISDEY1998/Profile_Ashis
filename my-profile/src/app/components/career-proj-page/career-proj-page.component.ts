@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { GlobalServiceService } from 'src/app/services/global-service.service';
 
 @Component({
@@ -18,9 +19,19 @@ export class CareerProjPageComponent implements OnInit {
   }
 
   fetchJobHistory(): void {
-    this.globalServiceService.getJobHistory().subscribe(skills => {
-      this.jobHistory = [...skills];
-      this.jobloading = false;
-    });
+    this.globalServiceService.getExps()
+      .pipe(map(res => {
+        const exps = []
+        for (const key in res) {
+          if (res.hasOwnProperty(key)) {
+            exps.push({ ...res[key], id: key })
+          }
+        }
+        return exps.reverse()
+      }))
+      .subscribe(exps => {
+        this.jobHistory = [...exps];
+        this.jobloading = false;
+      });
   }
 }

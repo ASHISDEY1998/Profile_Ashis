@@ -1,0 +1,72 @@
+<div class="my-3">
+    <div class="add-skill">
+        <h3>Add Skills</h3>
+        <form class="form" (ngSubmit)="onSkillSubmit()" #skillForm="ngForm">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="skillName">Skill Name *</label>
+                    <input type="text" ngModel class="form-control" id="skillName" placeholder="Add Skill Name"
+                        name="skillname" required #skname="ngModel">
+                    <div *ngIf="skname.invalid && skname.touched">
+                        <small>*Skill Name is a required field</small>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="skillProficencyRange">Skill proficency level: {{skrange.value || 50}}%</label>
+                <input type="range" ngModel class="form-control-range" id="skillProficencyRange" value="50"
+                    name="skillrange" #skrange="ngModel">
+            </div>
+            <div class="form-group">
+                <label for="skillDescription">skill Description</label>
+                <textarea class="form-control" ngModel id="skillDescription" name="skilldesc" required
+                    #skdesc="ngModel"></textarea>
+                <div *ngIf="skdesc.invalid && skdesc.touched">
+                    <small>*Skill Description is a required field</small>
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary save-button" [disabled]="!skillForm.valid">{{editMode?"Update
+                skill":"Add skill"}}</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="display-skill">
+        <h3>Saved Skills</h3>
+        <div style="overflow: auto;">
+            <table class="table table-striped table-bordered" *ngIf="!loading">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center">Index</th>
+                        <th scope="col" class="text-center">Skill Name</th>
+                        <th scope="col" class="text-center">Skill Proficency</th>
+                        <th scope="col" class="text-center">Description</th>
+                        <th scope="col" class="text-center">Edit</th>
+                        <th scope="col" class="text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="editSkills.length < 1 && !loading">
+                        <td colspan="6" class="text-center">No skill Availabale! </td>
+                    </tr>
+                    <tr *ngFor="let skill of editSkills;index as i">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{skill.name}}</td>
+                        <td>{{skill.level}}%</td>
+                        <td>{{skill.description}}</td>
+                        <td><button class="text-center border-none delete-record" (click)="onEditSkill(skill.id)"><i
+                                    class="bi bi-pencil-square"></i></button></td>
+                        <td><button class="text-center border-none delete-record" (click)="onDeleteSkill(skill.id)"><i
+                                    class="bi bi-trash3"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <app-loader *ngIf="loading"></app-loader>
+        </div>
+
+
+    </div>
+
+</div>

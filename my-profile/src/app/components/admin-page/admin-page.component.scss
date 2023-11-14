@@ -1,0 +1,63 @@
+@import "../../../variable.scss";
+
+
+.login-container {
+    color: $color-secondary;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 32px auto;
+
+    .page-heading {
+        text-align: center;
+        font-size: $heading-font-desktop;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $color-primery;
+
+        @media (max-width:991px) {
+            font-size: $heading-font-mobile;
+            margin-bottom: 18px;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-size: $sub-heading-font-desktop;
+
+        @media (max-width:991px) {
+            font-size: $sub-heading-font-mobile;
+        }
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 6px 10px;
+        border: 1px solid $color-background;
+        border-radius: 4px;
+        background-color: rgba(15, 15, 15, 0.1);
+        color: $color-secondary;
+        font-size: $paragraph-font-desktop;
+
+        @media (max-width:991px) {
+            font-size: $paragraph-font-mobile;
+        }
+    }
+
+    .login-button {
+        background-color: $color-primery;
+        color: $color-background;
+        padding: 6px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 500;
+        font-size: $sub-heading-font-desktop;
+    }
+}

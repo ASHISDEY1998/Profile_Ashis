@@ -1,7 +1,7 @@
 @import "../../../variable.scss";
 
 .hero-banner {
-    max-width: 1440px;
+    max-width: 1080px;
     width: 100%;
     margin: auto;
     padding-top: 0px;
@@ -21,12 +21,11 @@
 
             .title-prefix {
                 font-weight: 500;
-                font-size: 24px;
+                font-size: $sub-heading-font-desktop;
                 line-height: 24px;
-                margin-bottom: 8px;
 
                 @media(max-width:991px) {
-                    font-size: 20px;
+                    font-size: $sub-heading-font-mobile;
                     line-height: 20px;
                 }
             }
@@ -34,48 +33,46 @@
             .title,
             .title-sufix {
                 font-weight: 700;
-                font-size: 48px;
-                line-height: 40px;
-                margin-bottom: 8px;
+                font-size: $large-heading-font-desktop;
+                line-height: 24px;
                 color: $color-primery;
 
                 @media(max-width:991px) {
-                    font-size: 44px;
-                    line-height: 36px;
-                }
-            }
-
-            .title-sufix {
-                font-size: 28px;
-                font-weight: 500;
-
-                @media(max-width:991px) {
-                    font-size: 24px;
+                    font-size: $large-heading-font-mobile;
                     line-height: 24px;
                 }
             }
 
-            .hero-description {
-                font-size: 20px;
-                line-height: 32px;
-                font-weight: 600;
-                margin-bottom: 14px;
+            .title-sufix {
+                font-size: $sub-heading-font-desktop;
+                font-weight: 500;
 
                 @media(max-width:991px) {
-                    font-size: 18px;
-                    line-height: 28px;
+                    font-size: $sub-heading-font-mobile;
+                    line-height: 22px;
+                }
+            }
+
+            .hero-description {
+                font-size: $paragraph-font-desktop;
+                line-height: 22px;
+                font-weight: 600;
+
+                @media(max-width:991px) {
+                    font-size: $paragraph-font-mobile;
+                    line-height: 20px;
                 }
             }
 
             .download-button {
-                font-size: 22px;
+                font-size: $sub-heading-font-desktop;
                 font-weight: 600;
                 color: $color-primery;
                 border-radius: 8px;
                 border: 3px solid $color-primery;
 
                 @media(max-width:991px) {
-                    font-size: 18px;
+                    font-size: $sub-heading-font-mobile;
                 }
 
                 i {
@@ -83,7 +80,7 @@
                     font-weight: 600;
 
                     @media(max-width:991px) {
-                        font-size: 18px;
+                        font-size: $sub-heading-font-mobile;
                     }
                 }
 

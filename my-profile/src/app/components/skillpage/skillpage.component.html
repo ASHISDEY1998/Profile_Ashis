@@ -5,23 +5,21 @@
         </div>
     </div>
     <div class="row content-row">
-        <div class="col-md-12 content-block">
+        <div class="col-lg-4 no-padd image-section">
+            <picture class="image-container d-flex align-items-center">
+                <source media="(min-width: 768px)" srcset="../../../assets/Images/skill_banner.png">
+                <source media="(max-width: 767px)" srcset="../../../assets/Images/skill_banner.png">
+                <img class="img-fluid" src="../../../assets/Images/skill_banner.png" alt="Responsive Image">
+            </picture>
+        </div>
+        <div class="col-md-8 content-block">
             <div class="skill-graph" *ngIf="!loading">
-                <div class="skills-desctiption" *ngFor="let skill of skills">
+                <div class="skills-desctiption" *ngFor="let skill of skills; let i = index">
                     <app-knowledge-range-bar [skillName]="skill.name" [knowledgeLevel]="skill.level"
                         [skillDescription]="skill.description"></app-knowledge-range-bar>
-
                 </div>
             </div>
-            <div class="loader" *ngIf="loading">
-                <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-
+            <app-loader *ngIf="loading"></app-loader>
         </div>
     </div>
 </div>
