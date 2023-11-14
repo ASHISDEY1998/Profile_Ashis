@@ -1,14 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
 @import "./variable.scss";
 
 body {
     background-color: white;
     color: $color-secondary;
-    font-family: 'Nunito', sans-serif;
+    font-family: $font-family;
 }
 
 .no-padd {
     padding: 0;
+}
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-slide {
+    height: inherit !important;
+
+    .card {
+        height: 100%;
+    }
+}
+
+.slick-next {
+    right: -50px;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: "slick";
+    font-size: $large-heading-font-desktop;
+    line-height: 1;
+    color: $color-primery;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

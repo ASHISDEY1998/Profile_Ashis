@@ -8,32 +8,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 15px;
+    padding: 15px;
 
     .footer-content {
+        max-width: 1080px;
         display: flex;
         align-items: center;
         flex-direction: column;
         align-items: center;
         justify-content: center;
 
+
         @media(max-width:967px) {
             align-items: flex-start;
         }
 
         .footer-title {
-            font-size: 42px;
+            font-size: $large-heading-font-desktop;
             font-weight: 700;
             text-align: center;
 
             @media(max-width:991px) {
                 text-align: left;
-                font-size: 38px;
+                font-size: $large-heading-font-mobile;
             }
         }
 
         .footer-contact {
-            font-size: 22px;
+            font-size: $sub-heading-font-desktop;
             font-weight: 500;
 
             p {
@@ -42,7 +44,7 @@
 
                 @media(max-width:991px) {
                     text-align: left;
-                    font-size: 18px;
+                    font-size: $sub-heading-font-mobile;
                 }
             }
         }
@@ -58,10 +60,10 @@
 
                 a {
                     color: white;
-                    font-size: 28px;
+                    font-size: $sub-heading-font-desktop;
 
                     @media(max-width:991px) {
-                        font-size: 34px;
+                        font-size: $large-heading-font-desktop;
                     }
                 }
             }
@@ -70,9 +72,11 @@
 
         .outrow-desc {
             text-align: center;
+            font-size: $paragraph-font-desktop;
 
             @media(max-width:991px) {
                 text-align: left;
+                font-size: $paragraph-font-mobile;
             }
         }
     }
@@ -87,5 +91,9 @@
     color: #0b3b6b;
     padding: 14px 12px;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: $paragraph-font-desktop;
+
+    @media(max-width:991px) {
+        font-size: $paragraph-font-mobile;
+    }
 }

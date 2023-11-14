@@ -15,32 +15,37 @@
 
         .media-body {
             h5 {
-                font-size: 28px;
+                font-size: $sub-heading-font-desktop;
                 font-weight: 600;
                 color: $color-primery;
 
                 @media (max-width:991px) {
-                    font-size: 24px;
+                    font-size: $sub-heading-font-mobile;
+                }
+
+                span {
+                    font-size: $paragraph-font-desktop;
+                    font-weight: 500;
+                    color: gray;
+
+                    @media (max-width:991px) {
+                        font-size: $paragraph-font-mobile;
+                        font-weight: 500;
+                    }
                 }
             }
 
-            div {
-                font-size: 22px;
-                font-weight: 600;
-                color: gray;
 
-                @media (max-width:991px) {
-                    font-size: 18px;
-                }
-            }
 
             p {
-                font-size: 18px;
+                font-size: $paragraph-font-desktop;
+                font-weight: 400;
                 line-height: 22px;
                 margin-bottom: 0px;
 
                 @media (max-width:991px) {
-                    font-size: 14px;
+                    font-size: $paragraph-font-mobile;
+                    font-weight: 400;
                 }
             }
         }

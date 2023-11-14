@@ -1,0 +1,34 @@
+<div class="edit-website-comp container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                    <!-- <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button"
+                        role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button> -->
+                    <button class="nav-link active" id="nav-skill-tab" data-toggle="tab" data-target="#nav-skill"
+                        type="button" role="tab" aria-controls="nav-skill" aria-selected="true">Skill</button>
+                    <button class="nav-link" id="nav-experience-tab" data-toggle="tab" data-target="#nav-experience"
+                        type="button" role="tab" aria-controls="nav-experience"
+                        aria-selected="false">Experience</button>
+                    <button class="nav-link" id="nav-projects-tab" data-toggle="tab" data-target="#nav-projects"
+                        type="button" role="tab" aria-controls="nav-projects" aria-selected="false">Projects</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <!-- <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...
+                </div> -->
+                <div class="tab-pane fade show active" id="nav-skill" role="tabpanel" aria-labelledby="nav-skill-tab">
+                    <app-editskills></app-editskills>
+                </div>
+                <div class="tab-pane fade" id="nav-experience" role="tabpanel" aria-labelledby="nav-experience-tab">
+                    <app-editexp></app-editexp>
+                </div>
+                <div class="tab-pane fade" id="nav-projects" role="tabpanel" aria-labelledby="nav-projects-tab">
+                    <app-editprojects></app-editprojects>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

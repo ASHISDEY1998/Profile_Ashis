@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalServiceService } from '../../services/global-service.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-skillpage',
@@ -17,9 +18,20 @@ export class SkillpageComponent implements OnInit {
   }
 
   fetchSkills(): void {
-    this.globalServiceService.getSkills().subscribe(skills => {
-      this.skills = [...skills];
-      this.loading = false;
-    });
+    this.globalServiceService.getSkills()
+      .pipe(map(res => {
+        const skills = []
+        for (const key in res) {
+          if (res.hasOwnProperty(key)) {
+            skills.push({ ...res[key], id: key })
+          }
+        }
+        return skills
+      }))
+      .subscribe(skills => {
+
+        this.skills = [...skills];
+        this.loading = false;
+      });
   }
 }

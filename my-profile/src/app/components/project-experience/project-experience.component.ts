@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { GlobalServiceService } from 'src/app/services/global-service.service';
 
 @Component({
@@ -18,17 +19,20 @@ export class ProjectExperienceComponent implements OnInit {
 
   slideConfig = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 4,
     slidesToScroll: 4,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
+          prevArrow: null,
+          nextArrow: null,
           dots: true
         }
       },
@@ -36,14 +40,20 @@ export class ProjectExperienceComponent implements OnInit {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          prevArrow: null,
+          nextArrow: null,
+          dots: true
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          prevArrow: null,
+          nextArrow: null,
+          dots: true
         }
       }
       // You can unslick at a given breakpoint now by adding:
@@ -53,29 +63,37 @@ export class ProjectExperienceComponent implements OnInit {
   };
 
 
-  slickInit(e) {
-    console.log('slick initialized');
-  }
+  // slickInit(e) {
+  //   console.log('slick initialized');
+  // }
 
-  breakpoint(e) {
-    console.log('breakpoint');
-  }
+  // breakpoint(e) {
+  //   console.log('breakpoint');
+  // }
 
-  afterChange(e) {
-    console.log('afterChange');
-  }
+  // afterChange(e) {
+  //   console.log('afterChange');
+  // }
 
-  beforeChange(e) {
-    console.log('beforeChange');
-  }
+  // beforeChange(e) {
+  //   console.log('beforeChange');
+  // }
 
   fetchSkills(): void {
-    this.globalServiceService.getProjListUrl().subscribe(projs => {
-      this.projectList = [...projs];
-      this.projloading = false;
-    });
+    this.globalServiceService.getProjects()
+      .pipe(map(res => {
+        const exps = []
+        for (const key in res) {
+          if (res.hasOwnProperty(key)) {
+            exps.push({ ...res[key], id: key })
+          }
+        }
+        return exps
+      }))
+      .subscribe(exps => {
+        this.projectList = [...exps];
+        this.projloading = false;
+      });
   }
-
-
 
 }

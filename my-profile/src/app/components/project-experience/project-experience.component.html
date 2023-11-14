@@ -1,21 +1,17 @@
 <div class="slick-section">
-    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-        (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)"
-        *ngIf="!projloading">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" *ngIf="!projloading">
         <div ngxSlickItem *ngFor="let proj of projectList" class="slide">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ proj.imagePath }}" alt="" class="card-img-top">
+            <div class="card mx-3">
+                <img src="{{ proj.projImgUrl }}" alt="" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ proj.name }}</h5>
+                    <h5 class="card-title">{{ proj.projectName }}</h5>
                     <p class="card-text">{{proj.description}}</p>
                 </div>
             </div>
         </div>
     </ngx-slick-carousel>
     <div class="d-flex justify-content-center align-items-center">
-        <div class="spinner-border" role="status" *ngIf="projloading">
-            <span class="sr-only">Loading...</span>
-        </div>
+        <app-loader *ngIf="projloading"></app-loader>
     </div>
 
 </div>

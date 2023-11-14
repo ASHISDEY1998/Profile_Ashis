@@ -6,26 +6,25 @@
             </div>
         </div>
         <div class="row content-wrap">
-            <div class="col-lg-6 no-padd d-flex align-item-center image-section">
+
+            <div class="col-lg-8  no-padd content-block">
+                <div class="job-history" *ngIf="!jobloading">
+                    <div class="skills-desctiption" *ngFor="let job of jobHistory">
+                        <app-career [jobName]="job.company" [companyLogo]="job.compImgUrl"
+                            [tenureStart]="job.jobStartDate" [tenureEnd]="job.jobEndDate"
+                            [companyDesc]="job.description"></app-career>
+
+                    </div>
+                </div>
+                <app-loader *ngIf="jobloading"></app-loader>
+            </div>
+            <div class="col-lg-4 no-padd d-flex align-item-center image-section">
                 <picture class="image-container">
                     <source media="(min-width: 768px)" srcset="../../../assets/Images/career_banner.jpg">
                     <source media="(max-width: 767px)" srcset="../../../assets/Images/career_banner.jpg">
                     <img class="img-fluid" src="../../../assets/Images/career_banner.jpg" alt="Responsive Image">
                 </picture>
             </div>
-            <div class="col-lg-6 no-padd content-block">
-                <div class="job-history" *ngIf="!jobloading">
-                    <div class="skills-desctiption" *ngFor="let job of jobHistory">
-                        <app-career [jobName]="job.name" [companyLogo]="job.imagePath" [companyTenure]="job.timeline"
-                            [companyDesc]="job.description"></app-career>
-
-                    </div>
-                </div>
-                <div class="spinner-border" role="status" *ngIf="jobloading">
-                    <span class="sr-only">Loading...</span>
-                </div>
-            </div>
-
         </div>
     </div>
     <div>
@@ -36,8 +35,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <!-- <app-project-experience></app-project-experience> -->
-                <h3 class="text-center my-5">Coming Soon...</h3>
+                <app-project-experience></app-project-experience>
+                <!-- <h3 class="text-center my-5">Coming Soon...</h3> -->
 
             </div>
 

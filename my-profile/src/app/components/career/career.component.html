@@ -2,8 +2,9 @@
     <div class="media">
         <img [src]='companyLogo' class="mr-3 logo-img">
         <div class="media-body">
-            <h5 class="mt-0">{{jobName}}</h5>
-            <div> {{companyTenure}}</div>
+            <h5 class="mt-0">{{jobName}} <span class="mb-2">({{tenureStart | date: 'MMM-yyyy'}} to
+                    {{tenureEnd=="Present"?tenureEnd: tenureEnd | date: 'MMM-yyyy'}})</span>
+            </h5>
             <p>{{companyDesc}}</p>
         </div>
     </div>
