@@ -1,1 +1,230 @@
-<p>editprofile works!</p>
+<div class="my-3">
+    <div class="display-profile">
+        <h3>Profile Details</h3>
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div><b>Name:</b> <span>{{profileData.nameFull}}</span> </div>
+                <div><b>Nic Name:</b> <span>{{profileData.nickName}}</span> </div>
+                <div><b>Phone Number:</b> <span>{{profileData.phoneNumber}}</span> </div>
+                <div><b>Whatsapp number:</b><span>{{profileData.whatsappNo}}</span> </div>
+                <div><b>Email ID:</b> <span>{{profileData.emailId}}</span> </div>
+                <div><b>Linkedin Link:</b> <span>{{profileData.linkedinUrl}}</span> </div>
+                <div><b>Github Link:</b> <span>{{profileData.githubUrl}}</span> </div>
+                <div><b>Twiter Link:</b> <span>{{profileData.twiterUrl}}</span> </div>
+                <div><b>Job Profile:</b> <span>{{profileData.jobProfile}}</span> </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div><b>Profile Picture: </b></div>
+                <img [src]="profileData.imageUrl?profileData.imageUrl:'../../../assets/Images/dummy-image.jpg'"
+                    alt="Profile picture" class="image-preview" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div><b>Job Description:</b> <span>{{profileData.jobDescription}}</span> </div>
+                <div><b>Footer Description:</b> <span>{{profileData.footerDescription}}</span> </div>
+            </div>
+
+        </div>
+
+        <button class=" btn btn-primary save-button" (click)="onEditProfile(profileData)">Update Data</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="add-profile">
+        <h3>Edit Profile</h3>
+        <form class="form" (ngSubmit)="onProfileSubmit()" #profileForm="ngForm">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" ngModel class="form-control" id="name" placeholder="Add Name"
+                            name="profileName" required #pfname="ngModel">
+                        <div *ngIf="pfname.invalid && pfname.touched">
+                            <small>*Name is a required field</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="nicName">Nick Name *</label>
+                        <input type="text" ngModel class="form-control" id="nicName" placeholder="Add nick Name"
+                            name="nicName" required #prNicName="ngModel">
+                        <div *ngIf="prNicName.invalid && prNicName.touched">
+                            <small>*Nic Name is a required field</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="phNumber">Phone Number *</label>
+                        <input type="tel" ngModel class="form-control" id="phNumber" placeholder="Add Phone number"
+                            name="phNumber" required #phNum="ngModel">
+                        <div *ngIf="phNum.invalid && phNum.touched">
+                            <small>*Phone number is a required field</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <div class="form-check mr-5">
+                            <input class="form-check-input" type="checkbox" value="" id="whatsappNumCheck" ngModel
+                                name="whatsappNumCheck" #sameWpNum>
+                            <label class="form-check-label" for="whatsappNumCheck">
+                                Whatsaup number is same as phone number
+                            </label>
+                        </div>
+                        <div class="" *ngIf="!sameWpNum.checked">
+                            <label for="whatsappNum">Enter Whatsapp Number</label>
+                            <input class="form-control" type="tel" id="whatsappNum" ngModel name="whatsappNum" required
+                                #watsNum="ngModel">
+                            <div *ngIf="watsNum.invalid && watsNum.touched">
+                                <small>*whatsapp number is a required field</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="emailId">email Id *</label>
+                        <input type="email" ngModel class="form-control" id="emailId" placeholder="Add email id"
+                            name="emailId" required #emailId="ngModel">
+                        <div *ngIf="emailId.invalid && emailId.touched">
+                            <small>*Email is a required field</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="githubId">GitHub Url</label>
+                        <input type="url" ngModel class="form-control" id="githubId" placeholder="Add GitHub id"
+                            name="githubId">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="twitterId">X Id(Twitter)</label>
+                        <input type="url" ngModel class="form-control" id="twitterId" placeholder="Add X id"
+                            name="twitterId">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="linkediId">linkedin</label>
+                        <input type="url" ngModel class="form-control" id="linkediId" placeholder="Add Linkedin Id"
+                            name="linkediId">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 form-group">
+                    <div class="form-group">
+                        <label for="jobProfile">Job Profile *</label>
+                        <input type="text" ngModel class="form-control" id="jobProfile" placeholder="Add Job profile"
+                            name="jobProfile" required #jobProfile="ngModel">
+                        <div *ngIf="jobProfile.invalid && jobProfile.touched">
+                            <small>*Job Profile is a required field</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 form-group">
+                    <label for="jobDesc">Job Description *</label>
+                    <textarea type="text" ngModel class="form-control" id="jobDesc" placeholder="Add Job Description"
+                        name="jobDesc" required #jobDesc="ngModel"></textarea>
+                    <div *ngIf="jobDesc.invalid && jobDesc.touched">
+                        <small>*Job Description is a required field</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 form-group">
+                    <label for="footerDesc">Footer Description</label>
+                    <textarea type="text" ngModel class="form-control" id="footerDesc"
+                        placeholder="Add Footer Description" name="footerDesc"></textarea>
+                </div>
+            </div>
+            <div class="row  mb-3">
+                <div class="col-md-12 col-sm-12 form-group upload-img-section">
+                    <div class="form-check mr-5" *ngIf="editMode">
+                        <input class="form-check-input" type="checkbox" value="" id="changeProfilePic" ngModel
+                            name="changeProfilePic" #updateLogo>
+                        <label class="form-check-label" for="changeProfilePic">
+                            Change Profile Pic
+                        </label>
+                    </div>
+                    <div class="mr-5 d-flex" *ngIf="!editMode || profileForm.value.changeProfilePic">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text" id="compLogo">Profile picture *</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="ppimageUploadComp"
+                                aria-describedby="Profile pic upload" (change)="onImageChange($event)"
+                                name="profileimage" ngModel accept="image/*" #ppimg="ngModel" required />
+                            <label class="custom-file-label" for="ppimageUploadComp">{{imgName}}</label>
+                            <div *ngIf="ppimg.invalid && ppimg.touched">
+                                <small>* profile picture is a required field</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>Logo Preview:</p>
+                        <img [src]="imageUrl?imageUrl:'../../../assets/Images/dummy-image.jpg'" alt="Profile Picture"
+                            class="image-preview" />
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 form-group upload-img-section">
+                    <div class="form-check mr-5" *ngIf="editMode">
+                        <input class="form-check-input" type="checkbox" value="" id="changeResume" ngModel
+                            name="changeResume" #updateLogo>
+                        <label class="form-check-label" for="changeResume">
+                            Change Resume
+                        </label>
+                    </div>
+                    <div class="mr-5 d-flex" *ngIf="!editMode || profileForm.value.changeResume">
+                        <div class="input-group-prepend ">
+                            <span class="input-group-text" id="resume">Upload Resume pdf *</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="uploadResumeComp"
+                                aria-describedby="Profile pic upload" (change)="onResFileChange($event)"
+                                name="uploadResumeComp" ngModel accept=".pdf" #ppimg="ngModel" required />
+                            <label class="custom-file-label" for="ppimageUploadComp">{{resName}}</label>
+                            <div *ngIf="ppimg.invalid && ppimg.touched">
+                                <small>* Resume is a required field</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <button type="submit" class="btn btn-primary save-button" [disabled]="!profileForm.valid">{{editMode?"Update
+                Profile":"Create profile"}}</button>
+        </form>
+    </div>
+
+
+
+</div>

@@ -10,6 +10,17 @@ export class GlobalServiceService {
 
   constructor(private http: HttpClient) { }
 
+  getProfile() {
+    return this.http.get('https://ashis-developer-portfolio-default-rtdb.firebaseio.com/profile.json');
+  }
+  addProfile(profileObj) {
+    return this.http.post('https://ashis-developer-portfolio-default-rtdb.firebaseio.com/profile.json', profileObj);
+  }
+  updateProfile(id, value) {
+    return this.http.put('https://ashis-developer-portfolio-default-rtdb.firebaseio.com/profile/' + id + '.json', value)
+  }
+
+
   getSkills() {
     return this.http.get('https://ashis-developer-portfolio-default-rtdb.firebaseio.com/skills.json');
   }

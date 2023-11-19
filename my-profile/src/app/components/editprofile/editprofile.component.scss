@@ -1,0 +1,77 @@
+@import "../../../variable.scss";
+
+.add-profile {
+    .form {
+
+        input.ng-invalid.ng-touched,
+        textarea.ng-invalid.ng-touched {
+            border: red 2px solid;
+        }
+
+        small {
+            color: red;
+            font-weight: 500px;
+        }
+
+        .upload-img-section {
+            @media (min-width:991px) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .image-preview {
+            height: 170px;
+            width: 150px;
+        }
+
+        .save-button {
+            float: right;
+            background-color: $color-primery;
+            color: #fff;
+            border-radius: 25px;
+            font-size: $paragraph-font-desktop;
+            font-weight: 500;
+            padding: 8px 12px;
+            margin: 0px 8px;
+            width: fit-content;
+
+            &:focus {
+                outline: none;
+            }
+
+            @media (max-width:991px) {
+                font-size: $paragraph-font-mobile;
+            }
+        }
+
+    }
+
+}
+
+.display-profile {
+    .image-preview {
+        height: 170px;
+        width: 150px;
+    }
+
+    .save-button {
+        float: right;
+        background-color: $color-primery;
+        color: #fff;
+        border-radius: 25px;
+        font-size: $paragraph-font-desktop;
+        font-weight: 500;
+        padding: 8px 12px;
+        margin: 0px 8px;
+        width: fit-content;
+
+        &:focus {
+            outline: none;
+        }
+
+        @media (max-width:991px) {
+            font-size: $paragraph-font-mobile;
+        }
+    }
+}

@@ -30,14 +30,18 @@
             background-color: $color-primery;
             color: #fff;
             border-radius: 25px;
-            font-size: 22px;
+            font-size: $paragraph-font-desktop;
             font-weight: 500;
-            padding: 8px 22px;
+            padding: 8px 12px;
             margin: 0px 8px;
             width: fit-content;
 
             &:focus {
                 outline: none;
+            }
+
+            @media (max-width:991px) {
+                font-size: $paragraph-font-mobile;
             }
         }
 

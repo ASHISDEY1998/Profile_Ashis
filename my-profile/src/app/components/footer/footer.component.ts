@@ -1,4 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { map } from 'rxjs';
+import { GlobalServiceService } from 'src/app/services/global-service.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,16 +8,34 @@ import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  emailContent: string = 'ashisdey128@gmail.com';
-  phoneContent: string = '+91 8249770133';
-  whatsupContent: string = '+91 8249770133';
-
   notificationVisible: boolean = false;
   notificationMessage: string = '';
 
   @ViewChild('notificationPopper') notificationPopper!: ElementRef;
 
-  constructor(private renderer: Renderer2) { }
+  profileData: any = {};
+  loading: boolean = true;
+  constructor(private globalService: GlobalServiceService) { }
+
+  ngOnInit(): void {
+    this.fetchProfile()
+  }
+  fetchProfile(): void {
+    this.globalService.getProfile()
+      .pipe(map(res => {
+        const profiles = []
+        for (const key in res) {
+          if (res.hasOwnProperty(key)) {
+            profiles.push({ ...res[key], id: key })
+          }
+        }
+        return profiles[0]
+      }))
+      .subscribe(profiles => {
+        this.profileData = { ...profiles };
+        this.loading = false;
+      });
+  }
 
   copyToClipboard(content: string) {
     const textArea = document.createElement('textarea');

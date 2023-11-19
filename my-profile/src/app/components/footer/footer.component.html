@@ -3,29 +3,29 @@
         <div class="footer-content">
             <h3 class="footer-title mb-4"> Let's Connect</h3>
             <div class="footer-contact mb-4">
-                <p class=" mb-3" (click)="copyToClipboard(emailContent)" data-toggle="tooltip" data-placement="right"
-                    title="click to copy">
-                    <i class="bi bi-envelope-at mx-3"></i> {{emailContent}}
+                <p class=" mb-3" (click)="copyToClipboard(profileData.emailId)" data-toggle="tooltip"
+                    data-placement="right" title="click to copy">
+                    <i class="bi bi-envelope-at mx-3"></i> {{profileData.emailId}}
                 </p>
-                <p class=" mb-3" (click)="copyToClipboard(phoneContent)" data-toggle="tooltip" data-placement="right"
-                    title="click to copy">
-                    <i class="bi bi-phone  mx-3"></i> {{phoneContent}}
+                <p class=" mb-3" (click)="copyToClipboard(profileData.phoneNumber)" data-toggle="tooltip"
+                    data-placement="right" title="click to copy">
+                    <i class="bi bi-phone  mx-3"></i> {{profileData.phoneNumber}}
                 </p>
-                <p class=" mb-3" (click)="copyToClipboard(whatsupContent)" data-toggle="tooltip" data-placement="right"
-                    title="click to copy">
-                    <i class="bi bi-whatsapp  mx-3"></i> {{whatsupContent}}
+                <p class=" mb-3" (click)="copyToClipboard(profileData.whatsappNo)" data-toggle="tooltip"
+                    data-placement="right" title="click to copy">
+                    <i class="bi bi-whatsapp  mx-3"></i> {{profileData.whatsappNo}}
                 </p>
             </div>
             <div class="footer-icon-bar mb-4">
-                <a href="https://linkedin.com/in/ashis-dey-20217a154" target="_blank" class="linkedin"><i
-                        class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/ASHISDEY1998" target="_blank" class="github"><i
+                <a [href]="profileData.linkedinUrl" *ngIf="profileData.linkedinUrl!==''" target="_blank"
+                    class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a [href]="profileData.githubUrl" *ngIf="profileData.githubUrl!==''" target="_blank" class="github"><i
                         class="bi bi-github"></i></a>
-                <a href="https://twitter.com/AshisKumarDey13" target="_blank" class="twitter"><i
-                        class="bi bi-twitter"></i></a>
-                <a href="mailto:ashisdey128@gmail.com?subject=Hello%20from%20Your%20Website" class="email"><i
+                <a [href]="profileData.linkedinUrl" *ngIf="profileData.linkedinUrl!==''" target="_blank"
+                    class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="mailto:{{profileData.emailId}}?subject=Hello%20from%20Your%20Website" class="email"><i
                         class="bi bi-envelope-at-fill"></i></a>
-                <a href="tel:+918249770133" class="phone"><i class="bi bi-telephone-fill"></i></a>
+                <a [href]="profileData.phoneNumber" class="phone"><i class="bi bi-telephone-fill"></i></a>
             </div>
             <p class="outrow-desc">
                 Bringing creative visions to life through Angular, HTML, CSS, JavaScript, and TypeScript. Elevating user
